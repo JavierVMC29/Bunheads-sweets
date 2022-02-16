@@ -113,6 +113,9 @@ const SignUpButton = styled.button`
     color: #fff;
     text-decoration: none;
   }
+  :hover {
+    background-color: ${(props) => props.theme.btnColorHover};
+  }
 `
 
 const ContainerMobile = styled.div`

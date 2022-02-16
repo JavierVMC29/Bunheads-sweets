@@ -5,8 +5,11 @@ const lightTheme = {
   fontFamily: 'Roboto , sans-serif',
   btnBgColor: '#DB677C',
   btnColor: '#FFF8F4',
+  btnColorHover: '#ca6074',
   linkMenuColorMobile: '#FFF8F4',
-  bgMenuColorMobile: '#DB677C'
+  bgMenuColorMobile: '#DB677C',
+  labelColor: '#1f1f1f',
+  placeholderColor: '#4b4b4b'
 }
 
 export default lightTheme

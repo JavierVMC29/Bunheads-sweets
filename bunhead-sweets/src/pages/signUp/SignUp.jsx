@@ -1,7 +1,6 @@
 import styled from 'styled-components'
-import device from '../../breakpoints'
 
-import SignInForm from '../../components/signInForm/SignInForm'
+import SignUpForm from '../../components/signUpForm/SignUpForm'
 
 const Container = styled.main`
   min-height: 100vh;
@@ -12,7 +11,8 @@ const Container = styled.main`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: ${(props) => props.theme.mainColor};
+
+  background: rgb(186, 95, 95);
   background: linear-gradient(
     56deg,
     rgba(186, 95, 95, 1) 0%,
@@ -22,7 +22,7 @@ const Container = styled.main`
 `
 
 const FormWrapper = styled.div`
-  background-color: ${(props) => props.theme.bgColor};
+  background-color: var(--colorClaro);
   border-radius: 4px;
   display: flex;
   justify-content: center;
@@ -32,9 +32,6 @@ const FormWrapper = styled.div`
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   padding: 2em;
-  @media ${device.tablet} {
-    max-width: 100%;
-  }
 `
 
 const Title = styled.h1`
@@ -42,15 +39,15 @@ const Title = styled.h1`
   margin-bottom: 60px;
 `
 
-const SignIn = () => {
+const SignUp = () => {
   return (
     <Container>
       <FormWrapper>
-        <Title>Sign in</Title>
-        <SignInForm></SignInForm>
+        <Title>Sign up</Title>
+        <SignUpForm></SignUpForm>
       </FormWrapper>
     </Container>
   )
 }
 
-export default SignIn
+export default SignUp
