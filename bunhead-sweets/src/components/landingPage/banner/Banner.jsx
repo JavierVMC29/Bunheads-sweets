@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
-import device from '../../breakpoints'
+import device from '../../../breakpoints'
 
-import bannerBg from '../../images/bannerBg.jpg'
+import bannerBg from '../../../images/bannerBg.jpg'
 
 const Container = styled.section`
   width: 100%;
@@ -20,6 +20,7 @@ const Container = styled.section`
   align-items: center;
   justify-content: center;
   font-family: ${(props) => props.theme.fontFamily};
+  line-height: ${(props) => props.theme.lineHeight};
 `
 
 const ContentWrapper = styled.div`
@@ -45,6 +46,7 @@ const Title = styled.h1`
   text-align: left;
   font-size: 5.96rem;
   font-weight: bold;
+  margin: 0;
   @media ${device.laptopL} {
     font-size: 4.768rem;
   }
@@ -87,7 +89,7 @@ const CTAButton = styled.button`
   color: ${(props) => props.theme.btnColor};
   border: none;
   padding: 0.5rem 2rem;
-  border-radius: 0.25rem;
+  border-radius: ${(props) => props.theme.btnBorderRadius};
   font-size: 1.1rem;
   a {
     color: ${(props) => props.theme.btnColor};
@@ -100,7 +102,7 @@ const Banner = () => {
   return (
     <Container>
       <ContentWrapper>
-        <Title>We are a landing page</Title>
+        <Title>Lorem ipsum dolor sit amet.</Title>
         <Phrase>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. <br></br>
           Impedit qui veritatis quae eius distinctio ipsa?

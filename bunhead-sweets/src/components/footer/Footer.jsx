@@ -9,6 +9,7 @@ const Container = styled.footer`
   background-color: ${(props) => props.theme.bgColor};
   font-family: ${(props) => props.theme.fontFamily};
   padding: 3rem 0;
+  line-height: ${(props) => props.theme.lineHeight};
 `
 
 const SectionsWrapper = styled.div`

@@ -13,6 +13,7 @@ const Container = styled.header`
   position: sticky;
   top: 0;
   z-index: 1000;
+  line-height: ${(props) => props.theme.lineHeight};
 `
 
 const NavBar = styled.nav`
@@ -21,7 +22,6 @@ const NavBar = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 1rem 0;
   min-width: 1320px;
   max-width: 1320px;
 
@@ -105,7 +105,7 @@ const SignInButton = styled.button`
 const SignUpButton = styled.button`
   padding: 0.5rem 2rem;
   border: none;
-  border-radius: 0.2rem;
+  border-radius: ${(props) => props.theme.btnBorderRadius};
   background: ${(props) => props.theme.mainColor};
   font-weight: bold;
   font-family: ${(props) => props.theme.fontFamily};
@@ -332,9 +332,6 @@ const Header = () => {
               </Option>
               <Option>
                 <Link to='/shop'>Contact</Link>
-              </Option>
-              <Option>
-                <Link to='/shop'>Team</Link>
               </Option>
             </Options>
           </OptionsWrapper>
