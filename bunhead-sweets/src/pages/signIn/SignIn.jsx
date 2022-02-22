@@ -4,10 +4,8 @@ import device from '../../breakpoints'
 import SignInForm from '../../components/signInForm/SignInForm'
 
 const Container = styled.main`
-  min-height: 100vh;
-  max-height: 100vh;
+  min-height: 90vh;
   min-width: 100vw;
-  max-width: 100vw;
 
   display: flex;
   justify-content: center;

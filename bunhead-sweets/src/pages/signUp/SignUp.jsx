@@ -3,10 +3,8 @@ import styled from 'styled-components'
 import SignUpForm from '../../components/signUpForm/SignUpForm'
 
 const Container = styled.main`
-  min-height: 100vh;
-  max-height: 100vh;
-  min-width: 100vw;
-  max-width: 100vw;
+  min-height: 90vh;
+  min-width: 90vw;
 
   display: flex;
   justify-content: center;

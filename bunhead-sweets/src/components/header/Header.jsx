@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import styled, { css } from 'styled-components'
 import device from '../../breakpoints'
-import { Link } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 
 const Container = styled.header`
   display: flex;
@@ -96,9 +96,9 @@ const SignInButton = styled.button`
   background: none;
   font-weight: bold;
   font-family: ${(props) => props.theme.fontFamily};
-  a {
-    color: ${(props) => props.theme.textColor};
-    text-decoration: none;
+  color: ${(props) => props.theme.textColor};
+  :hover {
+    cursor: pointer;
   }
 `
 
@@ -109,12 +109,10 @@ const SignUpButton = styled.button`
   background: ${(props) => props.theme.mainColor};
   font-weight: bold;
   font-family: ${(props) => props.theme.fontFamily};
-  a {
-    color: #fff;
-    text-decoration: none;
-  }
+  color: #fff;
   :hover {
     background-color: ${(props) => props.theme.btnColorHover};
+    cursor: pointer;
   }
 `
 
@@ -308,7 +306,13 @@ const BurgerText = styled.span`
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
-
+  const navigate = useNavigate()
+  const goToSignIn = () => {
+    navigate('/signin')
+  }
+  const goToSignUp = () => {
+    navigate('/signup')
+  }
   return (
     <>
       <Container>
@@ -335,12 +339,8 @@ const Header = () => {
             </Options>
           </OptionsWrapper>
           <ButtonsWrapper>
-            <SignInButton>
-              <Link to='/signin'>Sign in</Link>
-            </SignInButton>
-            <SignUpButton>
-              <Link to='/signup'>Sign up</Link>
-            </SignUpButton>
+            <SignInButton onClick={goToSignIn}>Sign in</SignInButton>
+            <SignUpButton onClick={goToSignUp}>Sign up</SignUpButton>
           </ButtonsWrapper>
         </NavBar>
       </Container>

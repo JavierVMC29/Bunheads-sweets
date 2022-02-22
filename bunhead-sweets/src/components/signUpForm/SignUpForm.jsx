@@ -74,6 +74,7 @@ const SubmitButton = styled.button`
 
   :hover {
     background-color: ${(props) => props.theme.btnColorHover};
+    cursor: pointer;
   }
 `
 
