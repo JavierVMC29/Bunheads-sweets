@@ -27,18 +27,35 @@ const ContentWrapper = styled.div`
 
   margin: 0;
 
-  min-width: 1320px;
-  max-width: 1320px;
+  @media ${device.desktopL} {
+    min-width: 1320px;
+    max-width: 1320px;
+  }
 
   @media ${device.laptopL} {
     min-width: 960px;
     max-width: 960px;
+  }
+
+  @media ${device.laptop} {
+    min-width: 100%;
+    max-width: 100%;
+    flex-direction: column;
+  }
+  @media ${device.tablet} {
+    min-width: 100%;
+    max-width: 100%;
+    flex-direction: column-reverse;
   }
 `
 
 const ImageContainer = styled.div`
   flex: 1;
   margin: 1rem;
+  @media ${device.mobileL} {
+    margin: 0;
+    width: 95%;
+  }
 `
 const Image = styled.img`
   display: flex;
@@ -46,6 +63,14 @@ const Image = styled.img`
   align-items: center;
   background-color: ${(props) => props.theme.mainColor};
   border-radius: 0.25rem;
+
+  @media ${device.laptop} {
+    width: 400px;
+  }
+
+  @media ${device.mobileL} {
+    width: 100%;
+  }
 `
 const InfoContainer = styled.div`
   flex: 1;
@@ -71,10 +96,15 @@ const Description = styled.p`
 
 const About = () => {
   return (
-    <Container>
+    <Container id='about'>
       <ContentWrapper>
         <ImageContainer>
-          <Image src={logo}></Image>
+          <Image
+            src={logo}
+            title='Bunheads sweets logo'
+            alt='Bunheads sweets logo'
+            role='presentation'
+          ></Image>
         </ImageContainer>
         <InfoContainer>
           <Title>About us</Title>

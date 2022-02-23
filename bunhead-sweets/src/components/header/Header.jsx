@@ -7,7 +7,7 @@ const Container = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   background-color: ${(props) => props.theme.bgColor};
   font-family: ${(props) => props.theme.fontFamily};
   position: sticky;
@@ -67,8 +67,8 @@ const TitleWrapper = styled.div`
 `
 
 const Title = styled.h1`
-  font-size: 3.052rem;
-  font-weight: 500;
+  font-size: ${(props) => props.theme.fontSizeH2};
+  font-weight: ${(props) => props.theme.fontWeightH1};
   margin: 0;
   a {
     text-decoration: none;
@@ -111,7 +111,7 @@ const SignUpButton = styled.button`
   font-family: ${(props) => props.theme.fontFamily};
   color: #fff;
   :hover {
-    background-color: ${(props) => props.theme.btnColorHover};
+    background-color: ${(props) => props.theme.btnBgColorHover};
     cursor: pointer;
   }
 `
@@ -119,7 +119,7 @@ const SignUpButton = styled.button`
 const ContainerMobile = styled.div`
   display: flex;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   background-color: ${(props) => props.theme.bgColor};
   font-family: ${(props) => props.theme.fontFamily};
   position: sticky;
@@ -319,7 +319,7 @@ const Header = () => {
         <NavBar>
           <TitleWrapper>
             <Title>
-              <Link to='/'>Bunhead's Sweets</Link>
+              <Link to='/'>Bunheads' Sweets</Link>
             </Title>
           </TitleWrapper>
           <OptionsWrapper>

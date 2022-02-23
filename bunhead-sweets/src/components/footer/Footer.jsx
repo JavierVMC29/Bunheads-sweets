@@ -5,7 +5,7 @@ const Container = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   background-color: ${(props) => props.theme.bgColor};
   font-family: ${(props) => props.theme.fontFamily};
   padding: 3rem 0;
