@@ -3,7 +3,7 @@ import { Link } from 'react-scroll'
 
 import device from '../../../breakpoints'
 
-import bannerBg from '../../../images/bannerBg.jpg'
+import bannerBg from '../../../images/landingBannerBg.jpg'
 
 const Container = styled.section`
   width: 100%;

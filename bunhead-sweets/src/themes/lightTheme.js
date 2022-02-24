@@ -16,6 +16,7 @@ const lightTheme = {
   fontSizeBannerMessage: '1.563rem',
   fontMobileSizeBannerTitle: '3.052rem',
   fontMobileSizeBannerMessage: '1.25rem',
+  fontMobileSizeBreadcrumbTitle: '2.441rem',
   fontWeightH1: '600',
   fontWeightH2: '500',
   fontSizeH1: '3.052rem',

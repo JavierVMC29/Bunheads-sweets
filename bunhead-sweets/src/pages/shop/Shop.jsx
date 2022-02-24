@@ -1,8 +1,10 @@
+import Breadcrumb from '../../components/breadcrumb/Breadcrumb'
+
 const Shop = () => {
   return (
-    <div>
-      <h1>Shop</h1>
-    </div>
+    <main>
+      <Breadcrumb title='Shop'></Breadcrumb>
+    </main>
   )
 }
 
