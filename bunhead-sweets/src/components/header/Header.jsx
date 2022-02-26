@@ -331,7 +331,7 @@ const Header = () => {
                 <Link to='/shop'>Shop</Link>
               </Option>
               <Option>
-                <Link to='/shop'>Contact</Link>
+                <Link to='/contact'>Contact</Link>
               </Option>
             </Options>
           </OptionsWrapper>
