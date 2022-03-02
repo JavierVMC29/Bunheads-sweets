@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# Bunheads' Sweets front-end
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. install nodejs v16.13.1
+2. run **npm install** in this directory
+3. run **npm start** to run the app in the port 3000
 
 ## Available Scripts
 
