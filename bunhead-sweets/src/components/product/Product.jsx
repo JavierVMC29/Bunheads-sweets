@@ -1,6 +1,9 @@
 import styled from 'styled-components'
 import device from '../../breakpoints'
 
+import { useState, useEffect } from 'react'
+import { getImage } from '../../utils/images'
+
 import defaultImage from '../../images/discord-loading-image-gif-4.gif'
 
 const Container = styled.div`
@@ -70,14 +73,30 @@ const Product = ({ product }) => {
     name: 'Loading...',
     price: 'Loading...',
     description: 'Loading...',
-    category: 'Loading...'
+    category: 'Loading...',
   }
+
+  const [productImage, setProductImage] = useState(defaultImage)
+
+  useEffect(() => {
+    async function fetchData() {
+      // You can await here
+      const [response, error] = await getImage(
+        `http://localhost:8000/image/${image}`
+      )
+      if (error) console.log(error)
+      else {
+        setProductImage(response)
+      }
+    }
+    fetchData()
+  }, [image])
 
   return (
     <Container>
       <ImageContainer>
         <Image
-          src={image ? image : defaultImage}
+          src={productImage}
           alt='Product image'
           title='Product image'
         ></Image>

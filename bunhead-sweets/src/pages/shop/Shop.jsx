@@ -2,11 +2,14 @@ import styled from 'styled-components'
 
 import { useState, useEffect } from 'react'
 
+import axios from 'axios'
+
+import { getImage } from '../../utils/images'
+
 import RegularList from '../../components/regularList/RegularList'
 import Breadcrumb from '../../components/breadcrumb/Breadcrumb'
 import Product from '../../components/product/Product'
 
-import demoImage from '../../images/chocoCupcakes.jpg' //delete this later
 import Filter from '../../components/filter/Filter'
 
 const Container = styled.main`
@@ -34,63 +37,23 @@ const ProductsWrapper = styled.div`
 `
 const Shop = () => {
   //mock data
-  const [products, setProducts] = useState([
-    {
-      name: 'Choco Cupcakes',
-      price: 10,
-      description:
-        'Cupcakes made of chocolate and cover with vanilla cream.Cupcakes made of chocolate and cover with vanilla cream.Cupcakes made of chocolate and cover with vanilla cream.Cupcakes made of chocolate and cover with vanilla cream.',
-      category: 'Cupcakes',
-      image: demoImage
-    },
-    {
-      name: 'Vanilla Cupcakes',
-      price: 10,
-      description:
-        'Cupcakes made of chocolate and cover with vanilla cream.Cupcakes made of chocolate and cover with vanilla cream.Cupcakes made of chocolate and cover with vanilla cream.Cupcakes made of chocolate and cover with vanilla cream.',
-      category: 'Cupcakes',
-      image: demoImage
-    },
-    {
-      name: 'Choco Cake',
-      price: 10,
-      description:
-        'Cupcakes made of chocolate and cover with vanilla cream.Cupcakes made of chocolate and cover with vanilla cream.Cupcakes made of chocolate and cover with vanilla cream.Cupcakes made of chocolate and cover with vanilla cream.',
-      category: 'Cakes',
-      image: demoImage
-    },
-    {
-      name: 'Vanilla Cake',
-      price: 10,
-      description:
-        'Cupcakes made of chocolate and cover with vanilla cream.Cupcakes made of chocolate and cover with vanilla cream.Cupcakes made of chocolate and cover with vanilla cream.Cupcakes made of chocolate and cover with vanilla cream.',
-      category: 'Cakes',
-      image: demoImage
-    },
-    {
-      name: 'Choco Brownies',
-      price: 10,
-      description:
-        'Cupcakes made of chocolate and cover with vanilla cream.Cupcakes made of chocolate and cover with vanilla cream.Cupcakes made of chocolate and cover with vanilla cream.Cupcakes made of chocolate and cover with vanilla cream.',
-      category: 'Brownies',
-      image: demoImage
-    },
-    {
-      name: 'Vanilla Brownies',
-      price: 10,
-      description:
-        'Cupcakes made of chocolate and cover with vanilla cream.Cupcakes made of chocolate and cover with vanilla cream.Cupcakes made of chocolate and cover with vanilla cream.Cupcakes made of chocolate and cover with vanilla cream.',
-      category: 'Brownies',
-      image: demoImage
-    }
-  ])
+  const [products, setProducts] = useState(null)
+
+  useEffect(() => {
+    axios
+      .get('http://localhost:8000/product')
+      .then((response) => {
+        setProducts(response.data)
+      })
+      .catch((err) => console.error(err))
+  }, [])
 
   const categoryFilters = ['Cakes', 'Cupcakes', 'Brownies']
   const sortFilters = [
     'Lower cost first',
     'Higher cost first',
     'A - Z',
-    'Z - A'
+    'Z - A',
   ]
 
   const filterProducts = (category) => {
@@ -127,11 +90,15 @@ const Shop = () => {
           </FiltersContainer>
         </FiltersWrapper>
         <ProductsWrapper>
-          <RegularList
-            items={products}
-            resourceName='product'
-            itemComponent={Product}
-          ></RegularList>
+          {products ? (
+            <RegularList
+              items={products}
+              resourceName='product'
+              itemComponent={Product}
+            ></RegularList>
+          ) : (
+            ''
+          )}
         </ProductsWrapper>
       </ShopSection>
     </Container>
