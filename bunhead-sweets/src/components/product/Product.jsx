@@ -105,7 +105,7 @@ const Product = ({ product }) => {
         <Name>{name}</Name>
         <Price>${price}</Price>
         <Description>{description}</Description>
-        <Category>{category}</Category>
+        <Category>{category.name}</Category>
       </InfoContainer>
     </Container>
   )

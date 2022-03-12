@@ -38,5 +38,6 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/product', routers.productsRouter)
 app.use('/image', routers.imagesRouter)
+app.use('/category', routers.categoriesRouter)
 
 module.exports = app

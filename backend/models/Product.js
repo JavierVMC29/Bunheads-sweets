@@ -1,3 +1,4 @@
+const { default: mongoose } = require('mongoose')
 const { Schema, model } = require('mongoose')
 
 const Product = new Schema({
@@ -15,7 +16,8 @@ const Product = new Schema({
     required: [true, 'You must provide a description'],
   },
   category: {
-    type: String,
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Category',
     required: [true, 'You must provide a category'],
   },
   image: {
